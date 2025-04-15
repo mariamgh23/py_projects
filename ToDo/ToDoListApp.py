@@ -1,10 +1,23 @@
 # Applying All 4 OOP Encapsulation, Abstraction, Polymorphism, and Inheritance
-
+from abc import ABC, abstractmethod
 import tkinter as tk
 from tkinter import *
 from PIL import ImageTk, Image
 import os
 
+# Abstract class to define the task manager interface
+class AbstractTaskManager(ABC):
+    @abstractmethod
+    def add_task(self, task):
+        pass
+
+    @abstractmethod
+    def delete_task(self, task):
+        pass
+
+    @abstractmethod
+    def load_tasks(self):
+        pass
 # Base class to demonstrate polymorphism and inheritance
 class BaseTaskManager:
     def __init__(self):
